@@ -1,6 +1,6 @@
 # NEXSCAN - Advanced Port Scanner
 
-**Built for Kali Linux | Tested against Metasploitable2
+**Built for Kali Linux | Tested against Metasploitable2**
 
 ### What is NEXSCAN? 
 
@@ -150,9 +150,27 @@
 - The difference between a port being closed vs filtered — and what a firewall looks like from a scanner's perspective
 - Why knowing what's running on your own network matters just as much from a defensive side
 
+---
+
 ## Legal Disclaimer
 
 Only use this on the systems you own or have the explicit permissions to test. Unauthorized port scanning is illegal.
+
+---
+
+## Author
+
+**Cleveland Henry Lore**
+
+*Cybersecurity Enthusiast*
+
+---
+
+## References
+
+- [IANA Service Name and Port Number Registry](https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.xhtml) — official registry of all port numbers and their assigned services
+- [Nmap: The Art of Port Scanning](https://nmap.org/book/man-port-scanning-techniques.html) — industry-standard reference for port scanning techniques and methodology
+- [RFC 793 – Transmission Control Protocol (TCP)](https://www.rfc-editor.org/rfc/rfc793) — the foundational RFC that defines how TCP connections (and thus port scanning) work
 
 ---
 
