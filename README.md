@@ -48,6 +48,102 @@
 
    `--banners` --> *grabs the service banners so you can see what's actually running on each open port (version info, service name)*
    
+4. **Save the results**
+
+   `python3 port_scanner.py -t 192.168.56.5 -p 1-1024 --output results.json`
+
+   `-p 1-1024` --> *scans ports 1 throught 1024, these are known as well known ports and cover pretty much all important services (HTTP, SSH, FTP)
+
+   `--output results.json` --> *instead of just printing the terminal, it saves everything it found into a file called `results.json`
+
+---
+
+## All Options
+
+```
+-t, --target      Target IP or hostname                  [required]
+-p, --ports       Range: 1-1024  or list: 22,80,443
+    --group       Predefined port group                  [default: top-20]
+    --threads     Concurrent threads                     [default: 100]
+    --timeout     Seconds to wait per port               [default: 1.0]
+    --banners     Grab service banners (fingerprinting)
+-v, --verbose     Show closed and filtered ports too
+    --output      Output filename  (e.g. scan.json)
+    --format      json | csv | txt                       [default: json]
+```
+
+---
+
+## Port Groups
+
+|Group | What it covers|
+------------------------
+|top-20 | The 20 most scanned ports - a good starting point|
+|top-100| Ports 1 through 100|
+|web    | 80,443,8080,8888,9000,9200 and others|
+|database| MySQL, PostgreSQL, MongoDB, Redis, MSSQL, Oracle|
+|remote | SSH,RDP,VNC,Telnet,WinRM|
+|mail| SMTP,POP3.IMAP and their TLS variants|
+|all | All 65,535 ports --> use with `--threads 300+` and a lower timeout|
+--------------------------------------------------------------------------
+
+---
+
+## What to expect on Metasploitable2
+
+*Metasploitable2 is packed with deliberately vulnerable and misconfigured services.*
+
+*A typical scan will turn up ports like:*
+
+- 21 - FTP(vsftpd2.3.4 - backdoored version)
+- 22 - SSH
+- 23 - Telnet (open and unauthenticated)
+- 80 - HTTP (DVWA,phpMyAdmin)
+- 139/445 - Samba (SMB shares)
+- 3306 - MySQL(often no root password)
+- 5432 - Postgre SQL
+- 5900 - VNC
+- 6667 -IRC (UnreallRCd - also backdoored)
+- and many others
+
+*Run with `--banners` to grab the version strings*
+
+---
+
+## How it Works
+
+1. **Resolve the target** --> *DNS lookup*, IP validation, public/private check*
+2. **Build port list** --> *From `-p` range, `--group`, or manual list
+3. **Thread pool** --> *ThreadPoolExecutor dispatches scans concurrently*
+4. **TCP connect scan** --> *socket.connect_ex() - full 3-way handshake
+5. **Banner grab** --> *Optional - sends HTTP HEAD or newline, reads response*
+6. **Clarify result** --> *open/ closed / filtered*
+7. **Live display** --> *color-coded table + real-time progress bar*
+8. **Summary + export** --> *stats, danger flags, optional file output*
+
+*The technique used in **TCP Connect Scan** - completes the full handshake, no elevated privileges needed, works reliably in most network configs. Not stealthy(connections show up in logs), this will not matter for this lab.*
+
+---
+
+## Lessons Learnt
+
+- How TCP connections actually work - 3-way handshake, what open/closed/filtered means at network level.
+- What ports are, why they exist, and why certain ones are more important than others
+- How to work with the `socket` module to make real network connections in code
+- How `ThreadPoolExecutor` works and why multi-threading makes a scanner dramatically faster
+- How to build a proper CLI tool using `argparse` — the same way real tools are buil
+- What reconnaissance is and why port scanning is always the first step in any assessment
+- Why certain ports like Telnet, SMB, and Redis are considered dangerous when found open
+- What banner grabbing is and how attackers use version info to find known vulnerabilities
+- The difference between a port being closed vs filtered — and what a firewall looks like from a scanner's perspective
+- Why knowing what's running on your own network matters just as much from a defensive side
+
+## Legal Disclaimer
+
+Only use this on the systems you own or have the explicit permissions to test. Unauthorized port scanning is illegal.
+
+---
+
 
 
 
