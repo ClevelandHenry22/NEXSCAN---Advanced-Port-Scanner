@@ -76,17 +76,15 @@
 
 ## Port Groups
 
-|Group | What it covers|
-------------------------
-|top-20 | The 20 most scanned ports - a good starting point|
-|top-100| Ports 1 through 100|
-|web    | 80,443,8080,8888,9000,9200 and others|
-|database| MySQL, PostgreSQL, MongoDB, Redis, MSSQL, Oracle|
-|remote | SSH,RDP,VNC,Telnet,WinRM|
-|mail| SMTP,POP3.IMAP and their TLS variants|
-|all | All 65,535 ports --> use with `--threads 300+` and a lower timeout|
---------------------------------------------------------------------------
-
+| Group    | What it covers                                              |
+|----------|-------------------------------------------------------------|
+| top-20   | The 20 most scanned ports - a good starting point           |
+| top-100  | Ports 1 through 100                                         |
+| web      | 80, 443, 8080, 8888, 9000, 9200 and others                  |
+| database | MySQL, PostgreSQL, MongoDB, Redis, MSSQL, Oracle             |
+| remote   | SSH, RDP, VNC, Telnet, WinRM                                 |
+| mail     | SMTP, POP3, IMAP and their TLS variants                     |
+| all      | All 65,535 ports — use with `--threads 300+` and a lower timeout |
 ---
 
 ## What to expect on Metasploitable2
