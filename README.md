@@ -14,7 +14,7 @@
 
 - *Run Kali as your attacker machine*
 - *Metasploitable2 as the target*
-- *Both the VMs should be on the same network (Host-Only or NAT Network both work fine in virtual box)
+- *Both the VMs should be on the same network (Host-Only or NAT Network both work fine in virtual box)*
 
 ---
 
