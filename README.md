@@ -51,14 +51,24 @@
    `--group top-100` --> *scans the 100 most common ports instead of all 65,535*
 
    `--banners` --> *grabs the service banners so you can see what's actually running on each open port (version info, service name)*
+
+   ![nx output](/screenshots/nx2.png)
+
+   ![nx output2](/screenshots/nx3.png)
    
-6. **Save the results**
+7. **Save the results**
 
    `python3 port_scanner.py -t 192.168.56.5 -p 1-1024 --output results.json`
 
    `-p 1-1024` --> *scans ports 1 throught 1024, these are known as well known ports and cover pretty much all important services (HTTP, SSH, FTP)
 
    `--output results.json` --> *instead of just printing the terminal, it saves everything it found into a file called `results.json`
+
+   ![saved output](/screenshots/out1.png)
+
+   ![saved output2](/screenshots/out2.png)
+
+   ![saved output3](/screenshots/new-out3.png)
 
 ---
 
