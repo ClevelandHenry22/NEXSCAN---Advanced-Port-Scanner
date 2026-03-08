@@ -24,7 +24,7 @@ The lab was set up using two virtual machines running on the same isolated netwo
 
 | Machine | Role | OS | IP Address |
 |---|---|---|---|
-| Attacker | Running NEXSCAN | Kali Linux | 192.168.56.100 |
+| Attacker | Running NEXSCAN | Kali Linux | 192.168.56.6 |
 | Target | Being scanned | Metasploitable2 | 192.168.56.5 |
 
 **Why Metasploitable2?**
