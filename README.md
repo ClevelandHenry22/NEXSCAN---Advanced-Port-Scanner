@@ -26,7 +26,9 @@
 
    `ifconfig` - *note down the IP*
 
-2. **Set up NEXSCAN on Kali**
+   ![m2 IP](/screenshots/ifcnfg.png)
+
+3. **Set up NEXSCAN on Kali**
 
    `mkdir ~/nexscan` - *create directory of nexscan*
 
@@ -35,8 +37,10 @@
    `nano port_scanner.py` - *paste the full script in, then* `Ctrl+O` --> *Enter to save*, `Ctrl+X` *to exit*
 
    `chmod +x port_scanner.py` - *make it executable*
+
+   ![setup](/screenshots/nx1.png)
    
-3. **Run your first scan**
+5. **Run your first scan**
 
    `python3 port_scanner.py -t 192.168.56.5 --group top-100 --banners`
 
@@ -48,7 +52,7 @@
 
    `--banners` --> *grabs the service banners so you can see what's actually running on each open port (version info, service name)*
    
-4. **Save the results**
+6. **Save the results**
 
    `python3 port_scanner.py -t 192.168.56.5 -p 1-1024 --output results.json`
 
@@ -111,7 +115,7 @@
 ## How it Works
 
 1. **Resolve the target** --> *DNS lookup*, IP validation, public/private check*
-2. **Build port list** --> *From `-p` range, `--group`, or manual list
+2. **Build port list** --> *From `-p` range, `--group`, or manual list*
 3. **Thread pool** --> *ThreadPoolExecutor dispatches scans concurrently*
 4. **TCP connect scan** --> *socket.connect_ex() - full 3-way handshake
 5. **Banner grab** --> *Optional - sends HTTP HEAD or newline, reads response*
