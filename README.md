@@ -6,7 +6,7 @@
 
 **NEXSCAN** is a multi-threaded TCP port scanner written in pure Python. No external libraries, no root access needed - *just Python 3.10+ and a target your'e allowed to sacn.*
 
-*It is built specifically for lab environments. If you're running Kali Linux against Metasploitable2 (or any other intentionally vulnerable VM), this tool will do exactly what you need - fast, clean output, banner grabbing, and exportable results.
+*It is built specifically for lab environments. If you're running Kali Linux against Metasploitable2 (or any other intentionally vulnerable VM), this tool will do exactly what you need - fast, clean output, banner grabbing, and exportable results.*
 
 ---
 
