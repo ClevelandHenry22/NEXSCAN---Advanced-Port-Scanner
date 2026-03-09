@@ -1,4 +1,4 @@
-# NEXSCAN - Advanced Port Scanner
+# NEXSCAN - Port Scanner
 
 **Built for Kali Linux | Tested against Metasploitable2**
 
