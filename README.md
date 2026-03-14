@@ -34,7 +34,9 @@
 
    `cd ~/nexscan` - *move to the directory*
 
-   `nano port_scanner.py` - *paste the full script in, then* `Ctrl+O` --> *Enter to save*, `Ctrl+X` *to exit*
+   `nano port_scanner.py` - *paste the full script, then* `Ctrl+O` --> *Enter to save*, `Ctrl+X` *to exit*
+
+    - [port_scanner.py](/port_scanner.py)
 
    `chmod +x port_scanner.py` - *make it executable*
 
